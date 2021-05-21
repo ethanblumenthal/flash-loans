@@ -1,8 +1,8 @@
 pragma solidity ^0.8.4;
 
-import "contracts/aave/FlashLoanReceiverBase.sol";
-import "contracts/aave/ILendingPool.sol";
-import "contracts/interfaces/IUniswap.sol";
+import "./aave/FlashLoanReceiverBase.sol";
+import "./aave/ILendingPool.sol";
+import "./interfaces/IUniswap.sol";
 
 // 1 DAI = 1000000000000000000 (18 decimals)
 /*

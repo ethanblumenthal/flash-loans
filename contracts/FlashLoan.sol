@@ -1,15 +1,14 @@
 pragma solidity ^0.8.4;
 
-import "contracts/aave/FlashLoanReceiverBase.sol";
-import "contracts/aave/ILendingPool.sol";
-import "contracts/aave/ILendingPoolAddressesProvider.sol";
-
+import "./aave/FlashLoanReceiverBase.sol";
+import "./aave/ILendingPool.sol";
+import "./aave/ILendingPoolAddressesProvider.sol";
 
 // DAI ADDRESS: 0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD
 // PROVIDER ADDRESS: 0x506B0B2CF20FAA8f38a4E2B524EE43e1f4458Cc5
 // 1000 dai = 1000000000000000000000 (Due to 18 decimal number)
 
-contract MyfirstFlashLoan is FlashLoanReceiverBase(address(0x506B0B2CF20FAA8f38a4E2B524EE43e1f4458Cc5)) {
+contract FlashLoan is FlashLoanReceiverBase(address(0x506B0B2CF20FAA8f38a4E2B524EE43e1f4458Cc5)) {
   function flashLoan(uint256 newamount, address _token) external {
     bytes memory _params = "0x0";
     address exchangeAddress = addressesProvider.getLendingPool();
